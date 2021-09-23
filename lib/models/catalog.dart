@@ -1,5 +1,16 @@
 import 'dart:convert';
 
+class CatalogModel {
+  static List<Item>? items;
+
+  // Get item by ID
+  static Item getById(int id) =>
+      items!.firstWhere((element) => element.id == id, orElse: null);
+
+  // Get item by Position
+  static Item getByPosition(int pos) => items![pos];
+}
+
 class Item {
   final num id;
   final String name;
@@ -88,8 +99,4 @@ class Item {
         color.hashCode ^
         image.hashCode;
   }
-}
-
-class CatalogModel {
-  static List<Item>? items;
 }

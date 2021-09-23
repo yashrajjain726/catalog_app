@@ -11,8 +11,8 @@ class CatalogHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "PortFolieX".text.bold.xl5.color(MyTheme.primaryColor).make(),
-        "Your Future Devices".text.color(MyTheme.secondaryColor).make(),
+        "PortFolieX".text.bold.xl5.color(context.theme.primaryColor).make(),
+        "Your Future Devices".text.color(context.theme.primaryColor).make(),
       ],
     );
   }

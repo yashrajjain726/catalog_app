@@ -26,9 +26,12 @@ class CatalogItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                catalog.name.text.lg.color(MyTheme.textColor).bold.make(),
+                catalog.name.text.lg
+                    .color(context.theme.canvasColor)
+                    .bold
+                    .make(),
                 catalog.desc.text
-                    .color(MyTheme.textColor)
+                    .color(context.theme.canvasColor)
                     .caption(context)
                     .make(),
                 Expanded(
@@ -37,14 +40,14 @@ class CatalogItem extends StatelessWidget {
                     children: [
                       "\$${catalog.price}"
                           .text
-                          .color(MyTheme.textColor)
+                          .color(context.theme.canvasColor)
                           .xl
                           .bold
                           .make(),
                       ElevatedButton(
                         style: ButtonStyle(
                             backgroundColor: MaterialStateProperty.all<Color>(
-                              MyTheme.secondaryColor,
+                              context.theme.primaryColor,
                             ),
                             padding:
                                 MaterialStateProperty.all<EdgeInsetsGeometry>(
@@ -52,7 +55,10 @@ class CatalogItem extends StatelessWidget {
                             ),
                             shape: MaterialStateProperty.all(StadiumBorder())),
                         onPressed: () {},
-                        child: "Add to Cart".text.make(),
+                        child: "Add to Cart"
+                            .text
+                            .color(context.theme.canvasColor)
+                            .make(),
                       )
                     ],
                   ),
@@ -62,6 +68,6 @@ class CatalogItem extends StatelessWidget {
           )
         ],
       ),
-    )).rounded.color(MyTheme.primaryColor).square(140).make().py16();
+    )).rounded.color(context.theme.cardColor).square(140).make().py16();
   }
 }
